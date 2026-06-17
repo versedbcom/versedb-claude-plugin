@@ -25,9 +25,29 @@ The MCP itself connects at `https://versedb.com/mcp/api`. Installing the plugin 
 
 ## Requirements
 
-You'll need a VerseDB [Pro subscription](https://versedb.com/subscription). The hosted MCP requires Pro for **every** tool — search and browse included, not just the personal ones. Without it, calls come back with a `pro_required` / HTTP 402 error.
+You'll need a VerseDB [Pro subscription](https://versedb.com/pro). The hosted MCP requires Pro for **every** tool — search and browse included, not just the personal ones. Without it, calls come back with a `pro_required` / HTTP 402 error.
 
 ## Install
+
+The plugin lives in a marketplace on GitHub (`versedbcom/versedb-claude-plugin`). You add the
+marketplace once, then install VerseDB from it. The steps differ a little depending on where you
+run Claude.
+
+### Claude website (claude.ai) or the Claude desktop app
+
+1. Open **Customize** in the left sidebar.
+2. Next to **Personal plugins**, click the **+** button.
+3. Choose **Create plugin**, then **Add marketplace**.
+4. Pick **Add from a repository**. In the URL field, paste the GitHub repo:
+   `versedbcom/versedb-claude-plugin`
+5. Click **Sync**. (Claude warns that marketplace plugins aren't built or vetted by Anthropic —
+   that's expected.)
+6. Once it syncs, find **VerseDB** in the plugin list and click **Install**.
+
+Plugins are on the paid plans (Pro, Max, Team, Enterprise). The first time you use a VerseDB tool,
+Claude walks you through signing in to your account.
+
+### Claude Code (command line)
 
 ```text
 /plugin marketplace add versedbcom/versedb-claude-plugin
