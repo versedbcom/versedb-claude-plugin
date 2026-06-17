@@ -1,0 +1,6 @@
+{
+  "versedb": {
+    "type": "http",
+    "url": "https://versedb.com/mcp/api"
+  }
+}

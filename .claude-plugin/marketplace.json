@@ -1,0 +1,17 @@
+{
+  "name": "versedb",
+  "owner": {
+    "name": "Reggio Digital",
+    "email": "hello@reggiodigital.com"
+  },
+  "description": "VerseDB comic database tools for Claude.",
+  "plugins": [
+    {
+      "name": "versedb",
+      "source": "./",
+      "description": "Search, catalog, and discover comics through the VerseDB MCP.",
+      "version": "0.1.0",
+      "author": { "name": "Reggio Digital" }
+    }
+  ]
+}
