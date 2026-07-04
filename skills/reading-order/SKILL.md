@@ -12,18 +12,18 @@ The VerseDB MCP is Pro-only, every tool including search. If a call returns an a
 
 Figure out which of these entry points the request maps to, then search:
 
-- **Story arc** → `search-story-arcs-tool` → `get-story-arc-tool` (gives the arc's issues in order).
-- **Event / crossover** → `search-events-tool` → `get-event-tool` (events span many series; expect tie-ins).
-- **A run on a Title** ("the Snyder Batman") → `search-creators-tool` for the creator + `search-series-tool` for the volume, then `get-series-issues-tool` and filter to issues where that creator has the writer role (`get-issue-tool` exposes creator roles).
-- **A whole series/volume** → `search-series-tool` → `get-series-issues-tool`, ordered by issue number.
-- **A character's key moments** → `search-characters-tool` → `get-character-tool`, then pull the issues; use `get-key-issue-reasons-tool` to flag first appearances, origins, deaths.
+- **Story arc** → `search-tool` (`type: story_arc`) → `get-tool` (`type: story_arc`) (gives the arc's issues in order).
+- **Event / crossover** → `search-tool` (`type: event`) → `get-tool` (`type: event`) (events span many series; expect tie-ins).
+- **A run on a Title** ("the Snyder Batman") → `search-tool` (`type: creator`) for the creator + `search-tool` (`type: series`) for the volume, then `get-series-issues-tool` and filter to issues where that creator has the writer role (`get-tool` (`type: issue`) exposes creator roles).
+- **A whole series/volume** → `search-tool` (`type: series`) → `get-series-issues-tool`, ordered by issue number.
+- **A character's key moments** → `search-tool` (`type: character`) → `get-tool` (`type: character`), then pull the issues; use `get-key-issue-reasons-tool` to flag first appearances, origins, deaths.
 
 If the user names only a Title with several volumes, list the candidate volumes (publisher + year) and ask which one. Don't silently pick.
 
 ## Order it
 
 1. Pull the issue set for the resolved entity.
-2. Order by in-story chronology: issue number within a volume; for events, lead title first then tie-ins in published order; for multi-volume arcs, follow the arc's own sequence from `get-story-arc-tool`.
+2. Order by in-story chronology: issue number within a volume; for events, lead title first then tie-ins in published order; for multi-volume arcs, follow the arc's own sequence from `get-tool` (`type: story_arc`).
 3. Walk pagination (default 50/page) so long runs aren't truncated.
 
 ## Present it
@@ -31,6 +31,6 @@ If the user names only a Title with several volumes, list the candidate volumes 
 - A numbered list, each line `Series (year) #N` plus a one-line note on what happens. Mark key issues (1st appearance, death, origin) inline.
 - Call out optional tie-ins separately from the essential spine.
 - If the run is long, offer the collected-edition path (which trades to buy) as an alternative to single issues.
-- End by offering to save the order as a list (`create-list-tool` + `add-to-list-tool`) or add the issues to their pull list / collection.
+- End by offering to save the order as a list (`list-tool`: `create`, then `add_item`) or add the issues to their pull list / collection.
 
 The server ships a `reading-order` prompt; prefer it for a straight start-to-finish path.

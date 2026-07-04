@@ -2,7 +2,7 @@
 
 Search, catalog, and discover comics through the [VerseDB](https://versedb.com) MCP. The plugin bundles the connection along with a few skills and an agent that know how to use the tools.
 
-VerseDB is a comic database covering comics, manga, manhwa, manhua, and bande dessinée. The MCP gives you around 50 tools. Most of them search and fetch data: titles, series, issues, creators, characters, publishers, teams, story arcs, universes, events, tier lists, comic shops, and podcasts. The rest are personal: your collection, pull lists, reading progress, lists, reviews, and market prices.
+VerseDB is a comic database covering comics, manga, manhwa, manhua, and bande dessinée. The MCP gives you 18 tools. Two of them do most of the browsing: `search-tool` and `get-tool` take a `type` parameter covering titles, series, issues, creators, characters, publishers, teams, story arcs, universes, events, tier lists, comic shops, and podcasts. The rest are specialized lookups (trending, upcoming releases, market prices, barcode lookup, key issues, community reviews, series issue lists) and personal tools for your collection, pull list, reading progress, lists, and reviews — each write tool takes an `operation` parameter saying what to do.
 
 ## What you get
 

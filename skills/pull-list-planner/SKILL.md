@@ -15,8 +15,8 @@ Keep the user current on the ongoing series they follow. The whole VerseDB MCP i
 ## What to surface
 
 1. **What's coming.** Upcoming issues for followed series, by date. Group by week, and note key issues (`get-key-issue-reasons-tool`) and finales.
-2. **Catch up.** Followed series with shipped-but-unread issues. Offer to mark caught-up issues read (`mark-as-read-tool`) once the user confirms they've read them. Never mark read on your own.
-3. **What to add.** Suggest new ongoings via `get-trending-tool` and `search-series-tool`, filtered to series they don't already follow and matched to the creators and genres in their current pulls. Add with `add-to-pull-list-tool` after confirmation. Prune dead or ended series with `remove-from-pull-list-tool`.
+2. **Catch up.** Followed series with shipped-but-unread issues. Offer to mark caught-up issues read (`read-status-tool` (`operation: mark_read`)) once the user confirms they've read them. Never mark read on your own.
+3. **What to add.** Suggest new ongoings via `get-trending-tool` and `search-tool` (`type: series`), filtered to series they don't already follow and matched to the creators and genres in their current pulls. Add with `pull-list-tool` (`operation: add`) after confirmation. Prune dead or ended series with `pull-list-tool` (`operation: remove`).
 
 ## Present it
 

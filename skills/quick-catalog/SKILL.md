@@ -4,7 +4,7 @@ description: Bulk-adds comics to the user's VerseDB collection from a pasted lis
 
 # Quick catalog
 
-Get a stack of comics into the user's collection, matched correctly, asking as few questions as possible. The whole VerseDB MCP is Pro-only. If any call (e.g. `add-to-collection-tool`) returns an auth/subscription error (`pro_required` / HTTP 402), tell the user it needs Pro and stop.
+Get a stack of comics into the user's collection, matched correctly, asking as few questions as possible. The whole VerseDB MCP is Pro-only. If any call (e.g. `collection-tool` (`operation: add`)) returns an auth/subscription error (`pro_required` / HTTP 402), tell the user it needs Pro and stop.
 
 ## 1. Parse the input
 
@@ -28,7 +28,7 @@ Tell the user what you read from the image, and ask them to fill in anything the
 ## 2. Resolve each book: match before you write
 
 For each entry:
-1. `search-issues-tool` (or `search-series-tool` → `get-series-issues-tool` for a range) to find candidates.
+1. `search-tool` (`type: issue`) (or `search-tool` (`type: series`) → `get-series-issues-tool` for a range) to find candidates.
 2. Pick the match only when it's unambiguous (right series volume by **publisher + year**, right issue number). Watch the data-model traps:
    - The same Title has many **volumes** — "Batman #50" is meaningless without the year/volume.
    - **Variants** are distinct from the base issue — match the printing the user means; ask if unclear.
@@ -38,9 +38,9 @@ For each entry:
 ## 3. Confirm, then write
 
 - Show the resolved set as a table (`Series (year) #N — grade/condition`) and the unresolved set separately. Get a go-ahead before writing.
-- `add-to-collection-tool` per book. Walk the list; **verify after writing** by reading back (`get-my-collection-tool`) that the count increased by the expected amount.
+- `collection-tool` (`operation: add`) per book. Walk the list; **verify after writing** by reading back (`get-my-collection-tool`) that the count increased by the expected amount.
 - Skip duplicates already in the collection rather than double-adding; report them.
 
 ## 4. Report
 
-Summarize: added N, skipped M dupes, K still need the user's input. For the leftovers, give the candidate options so the next pass is one reply. Offer to record grades/conditions you didn't have, or to start a want-list (`create-list-tool`) for anything they were cataloging but don't yet own.
+Summarize: added N, skipped M dupes, K still need the user's input. For the leftovers, give the candidate options so the next pass is one reply. Offer to record grades/conditions you didn't have, or to start a want-list (`list-tool` (`operation: create`)) for anything they were cataloging but don't yet own.

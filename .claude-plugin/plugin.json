@@ -1,7 +1,7 @@
 {
   "name": "versedb",
   "displayName": "VerseDB",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Search, catalog, and discover comics through the VerseDB MCP. Bundles the connection plus skills for reading orders, collection insights, discovery, and pull-list planning.",
   "author": {
     "name": "Reggio Digital",

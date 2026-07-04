@@ -24,10 +24,10 @@ For series the user collects:
 
 ## Key issues held
 
-Run owned issues against `get-key-issue-reasons-tool` (and `get-issue-tool` per book) to highlight first appearances, origins, deaths, and other significance the user may not realize they own.
+Run owned issues against `get-key-issue-reasons-tool` (and `get-tool` (`type: issue`) per book) to highlight first appearances, origins, deaths, and other significance the user may not realize they own.
 
 ## Present it
 
-Lead with the headline (total value, # of series, % read), then sections: Most valuable · Run gaps · Key issues · Suggested next read. Offer to save a "missing issues" list (`create-list-tool` + `add-to-list-tool`) or add the gaps to their pull list.
+Lead with the headline (total value, # of series, % read), then sections: Most valuable · Run gaps · Key issues · Suggested next read. Offer to save a "missing issues" list (`list-tool`: `create`, then `add_item`) or add the gaps to their pull list.
 
 The server ships a `collection-analysis` prompt; prefer it when the user wants a broad overview rather than a specific cut.

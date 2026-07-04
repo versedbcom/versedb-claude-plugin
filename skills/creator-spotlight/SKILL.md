@@ -10,14 +10,14 @@ The VerseDB MCP is Pro-only, every tool including search. If a call returns an a
 
 ## Resolve the creator
 
-`search-creators-tool`, then `get-creator-tool`. Name clashes are rare, but shared and legacy credits exist, so confirm you have the right person when matches are ambiguous.
+`search-tool` (`type: creator`), then `get-tool` (`type: creator`). Name clashes are rare, but shared and legacy credits exist, so confirm you have the right person when matches are ambiguous.
 
 ## Assemble the body of work
 
 A creator's contribution is **role-scoped**: the same person may write one book and draw another. Group credits by role.
 
-1. Pull the series and issues they're credited on (`get-creator-tool`, then `search-issues-tool` / `get-series-issues-tool` to fill in the full runs).
-2. Separate by role using the credits on `get-issue-tool` (writer vs. penciller/inker/colorist/letterer/cover/editor). Use the `creator-roles` resource for the canonical labels rather than guessing.
+1. Pull the series and issues they're credited on (`get-tool` (`type: creator`), then `search-tool` (`type: issue`) / `get-series-issues-tool` to fill in the full runs).
+2. Separate by role using the credits on `get-tool` (`type: issue`) (writer vs. penciller/inker/colorist/letterer/cover/editor). Use the `creator-roles` resource for the canonical labels rather than guessing.
 3. Identify **runs**, not scattered single credits. A continuous stretch on one series ("#1–50 of Daredevil") is the unit that matters.
 4. Note recurring **collaborators**, like the artist a writer keeps pairing with, and the **publishers** they work with.
 
@@ -28,4 +28,4 @@ A creator's contribution is **role-scoped**: the same person may write one book 
 3. **Full credits by role.** Grouped (As writer / As artist / Covers / Editor), runs collapsed into ranges, scannable.
 4. **If you liked X, read Y.** Adjacent picks within their catalog.
 
-End by offering to build a reading list of a chosen run (`create-list-tool` + `add-to-list-tool`), pull the run into the collection, or hand off to `reading-order` for a deep run.
+End by offering to build a reading list of a chosen run (`list-tool`: `create`, then `add_item`), pull the run into the collection, or hand off to `reading-order` for a deep run.

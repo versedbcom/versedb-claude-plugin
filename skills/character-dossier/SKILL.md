@@ -10,16 +10,16 @@ The VerseDB MCP is Pro-only, every tool including search. If a call returns an a
 
 ## Resolve the character
 
-`search-characters-tool` first. Common names collide across publishers and legacies (think of all the Robins, or the various Captain Marvels). When several strong matches come back, show them with publisher/universe and let the user pick. Then `get-character-tool` for the core record.
+`search-tool` (`type: character`) first. Common names collide across publishers and legacies (think of all the Robins, or the various Captain Marvels). When several strong matches come back, show them with publisher/universe and let the user pick. Then `get-tool` (`type: character`) for the core record.
 
 ## Build the dossier
 
 Gather each piece from its own source:
 
 - **First appearance & key issues.** Surface the debut and other significant books, labeled with their significance via `get-key-issue-reasons-tool` (1st appearance, origin, death, first cover, and so on).
-- **Affiliations.** Teams they belong to (`search-teams-tool` / `get-team-tool`) and the universe they live in (`get-universe-tool`).
-- **Defining stories.** The story arcs and events they anchor (`search-story-arcs-tool`, `search-events-tool`, `get-event-tool`).
-- **Notable runs.** The series where they're central (`search-series-tool`), plus the creators most associated with them.
+- **Affiliations.** Teams they belong to (`search-tool` (`type: team`) / `get-tool` (`type: team`)) and the universe they live in (`get-tool` (`type: universe`)).
+- **Defining stories.** The story arcs and events they anchor (`search-tool` (`type: story_arc`), `search-tool` (`type: event`), `get-tool` (`type: event`)).
+- **Notable runs.** The series where they're central (`search-tool` (`type: series`)), plus the creators most associated with them.
 
 ## Present it
 
