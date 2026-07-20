@@ -10,8 +10,11 @@
       "name": "versedb",
       "source": "./",
       "description": "Search, catalog, and discover comics through the VerseDB MCP.",
-      "version": "0.1.2",
-      "author": { "name": "Reggio Digital" }
+      "version": "0.1.4",
+      "author": {
+        "name": "VerseDB",
+        "email": "hello@versedb.com"
+      }
     }
   ]
 }

@@ -1,5 +1,5 @@
 ---
-description: Plans the user's VerseDB pull list: upcoming releases for series they follow, catching up on what shipped, finding new ongoings worth adding, and keeping the list current. Use when the user asks "what's coming out", "what's on my pull list", "new this week", "what should I add to my pulls", or "am I caught up".
+description: Plans the user's VerseDB pull list - upcoming releases for series they follow, catching up on what shipped, finding new ongoings worth adding, and keeping the list current. Use when the user asks "what's coming out", "what's on my pull list", "new this week", "what should I add to my pulls", or "am I caught up".
 ---
 
 # Pull-list planner
