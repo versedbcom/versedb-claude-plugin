@@ -35,7 +35,7 @@ Destructive or bulk writes (removing items, deleting a list, marking a whole run
 
 - **Pro gating.** The entire VerseDB MCP requires a Pro subscription — every tool, including search and browse, not just the personal ones. If a call fails with an auth/subscription error (`pro_required` / HTTP 402), tell the user the MCP needs Pro rather than retrying.
 - **Reviews:** 1–5 stars in half-star increments, one review per issue per user. If a review already exists, use `review-tool` (`operation: update`), not `review-tool` (`operation: create`).
-- **Lists are typed.** A list holds one entity kind (issues, series, characters, creators, story arcs, or teams) unless it was created as `mixed`. Adding to a mixed list needs an `entity_type` per item; converting a typed list to mixed (`convert_to_mixed`) is one-way.
+- **Lists are typed.** A list holds one entity kind (issues, series, characters, creators, story arcs, or teams) unless it was created as `mixed`. Adding to a mixed list needs an `entity_type` per item; converting a typed list to mixed (`convert_to_mixed`) is one-way. Issue items take an optional `variant_id` on `add_item` — issues only, and the variant must belong to the issue. Omit it unless the user means one specific cover; without it the item is "any cover", and both can coexist on the list.
 - **Pagination** defaults to 50. For "everything in this run" walk the pages; don't assume page one is complete.
 - **Market prices** are grade-dependent — always state the grade a value corresponds to, and note prices are estimates with sale dates.
 

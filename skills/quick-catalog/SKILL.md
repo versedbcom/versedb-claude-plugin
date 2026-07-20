@@ -43,4 +43,4 @@ For each entry:
 
 ## 4. Report
 
-Summarize: added N, skipped M dupes, K still need the user's input. For the leftovers, give the candidate options so the next pass is one reply. Offer to record grades/conditions you didn't have, or to start a want-list (`list-tool` (`operation: create`)) for anything they were cataloging but don't yet own.
+Summarize: added N, skipped M dupes, K still need the user's input. For the leftovers, give the candidate options so the next pass is one reply. Offer to record grades/conditions you didn't have, or to start a want-list (`list-tool` (`operation: create`)) for anything they were cataloging but don't yet own. When the user named a specific variant for a book they're hunting, carry it onto the list item — `list-tool` (`operation: add_item`) takes an optional `variant_id` (issue items only, and the variant must belong to that issue) that pins the entry to that cover. Omit it when they'd take any printing; the same issue can sit on the list once per variant plus once variant-less.
