@@ -10,7 +10,7 @@
       "name": "versedb",
       "source": "./",
       "description": "Search, catalog, and discover comics through the VerseDB MCP.",
-      "version": "0.1.5",
+      "version": "0.1.6",
       "author": {
         "name": "VerseDB",
         "email": "hello@versedb.com"
