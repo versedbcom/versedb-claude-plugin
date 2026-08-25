@@ -4,7 +4,7 @@ description: Analyzes the user's VerseDB comic collection - total and per-issue 
 
 # Collection insights
 
-Turn a user's collection into something they can act on: what it's worth, where the runs have gaps, and what to read next. The whole VerseDB MCP is Pro-only, so if any call (e.g. `get-my-collection-tool`) returns an auth/subscription error (`pro_required` / HTTP 402), tell the user it needs Pro and stop.
+Turn a user's collection into something they can act on: what it's worth, where the runs have gaps, what to read next. The whole VerseDB MCP is Pro-only, so if any call (e.g. `get-my-collection-tool`) returns an auth/subscription error (`pro_required` / HTTP 402), tell the user it needs Pro and stop.
 
 ## Pull the collection
 

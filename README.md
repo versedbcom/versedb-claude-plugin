@@ -1,8 +1,8 @@
 # VerseDB plugin for Claude Code
 
-Search, catalog, and discover comics through the [VerseDB](https://versedb.com) MCP. The plugin bundles the connection along with a few skills and an agent that know how to use the tools.
+Search, catalog, and discover comics through the [VerseDB](https://versedb.com) MCP. The plugin bundles the connection along with a few skills and a couple of agents that know how to use the tools.
 
-VerseDB is a comic database covering comics, manga, manhwa, manhua, and bande dessinée. The MCP gives you 18 tools. Two of them do most of the browsing: `search-tool` and `get-tool` take a `type` parameter covering titles, series, issues, creators, characters, publishers, teams, story arcs, universes, events, tier lists, comic shops, and podcasts. The rest are specialized lookups (trending, upcoming releases, market prices, barcode lookup, key issues, community reviews, series issue lists) and personal tools for your collection, pull list, reading progress, lists, and reviews — each write tool takes an `operation` parameter saying what to do.
+VerseDB is a comic database covering comics, manga, manhwa, manhua, and bande dessinée. The MCP gives you 18 tools. Two of them do most of the browsing: `search-tool` and `get-tool` take a `type` parameter covering titles, series, issues, creators, characters, publishers, teams, story arcs, universes, events, comic shops, and podcasts. The rest are specialized lookups (trending, upcoming releases, market prices, barcode lookup, key issues, community reviews, series issue lists) and personal tools for your collection, pull list, reading progress, lists, and reviews. Each write tool takes an `operation` parameter saying what to do.
 
 ## What you get
 
@@ -17,7 +17,7 @@ The MCP itself connects at `https://versedb.com/mcp/api`. Installing the plugin 
 
 - `reading-order` works out the chronological order for a character, arc, event, creator run, or series.
 - `collection-insights` looks at collection value, gaps in your runs, reading progress, and the key issues you own.
-- `discover-comics` pulls recommendations from trending titles, tier lists, key issues, and reviews.
+- `discover-comics` pulls recommendations from trending titles, key issues, and reviews.
 - `pull-list-planner` handles upcoming releases, catching up, and tidying your pull list.
 - `quick-catalog` bulk-adds comics to your collection from a pasted list or a series plus a range.
 - `character-dossier` builds a character profile: first appearance, key issues, affiliations, and where to start.
@@ -25,7 +25,7 @@ The MCP itself connects at `https://versedb.com/mcp/api`. Installing the plugin 
 
 ## Requirements
 
-You'll need a VerseDB [Pro subscription](https://versedb.com/pro). The hosted MCP requires Pro for **every** tool — search and browse included, not just the personal ones. Without it, calls come back with a `pro_required` / HTTP 402 error.
+You'll need a VerseDB [Pro subscription](https://versedb.com/pro). The hosted MCP requires Pro for **every** tool, search and browse included. Without it, calls come back with a `pro_required` / HTTP 402 error.
 
 ## Install
 
@@ -40,8 +40,8 @@ run Claude.
 3. Choose **Create plugin**, then **Add marketplace**.
 4. Pick **Add from a repository**. In the URL field, paste the GitHub repo:
    `versedbcom/versedb-claude-plugin`
-5. Click **Sync**. (Claude warns that marketplace plugins aren't built or vetted by Anthropic —
-   that's expected.)
+5. Click **Sync**. (Claude warns that marketplace plugins aren't built or vetted by Anthropic.
+   That's expected.)
 6. Once it syncs, find **VerseDB** in the plugin list and click **Install**.
 
 Plugins are on the paid plans (Pro, Max, Team, Enterprise). The first time you use a VerseDB tool,

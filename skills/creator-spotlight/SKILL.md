@@ -4,7 +4,7 @@ description: Maps a comic creator's body of work using VerseDB, including their 
 
 # Creator spotlight
 
-Take a creator's name and lay out their work: signature runs, full credits by role, and where to start.
+Take a creator's name and lay out their work by role, then say which run to read first.
 
 The VerseDB MCP is Pro-only, every tool including search. If a call returns an auth/subscription error (`pro_required` / HTTP 402), tell the user it needs Pro and stop.
 
@@ -23,9 +23,9 @@ A creator's contribution is **role-scoped**: the same person may write one book 
 
 ## Present it
 
-1. **Who.** One line: primary role(s), era, signature genres and publishers.
-2. **Signature runs.** The defining works, each as `Series (years) #range, role, one-line why`. Lead with the canonical starting point.
-3. **Full credits by role.** Grouped (As writer / As artist / Covers / Editor), runs collapsed into ranges, scannable.
+1. **Who:** one line on primary role(s), era, signature genres and publishers.
+2. **Signature runs:** the defining works, each as `Series (years) #range, role, one-line why`. Lead with the canonical starting point.
+3. **Full credits by role:** grouped (As writer / As artist / Covers / Editor), runs collapsed into ranges, scannable.
 4. **If you liked X, read Y.** Adjacent picks within their catalog.
 
 End by offering to build a reading list of a chosen run (`list-tool`: `create`, then `add_item`), pull the run into the collection, or hand off to `reading-order` for a deep run.

@@ -16,18 +16,18 @@ The VerseDB MCP is Pro-only, every tool including search. If a call returns an a
 
 Gather each piece from its own source:
 
-- **First appearance & key issues.** Surface the debut and other significant books, labeled with their significance via `get-key-issue-reasons-tool` (1st appearance, origin, death, first cover, and so on).
-- **Affiliations.** Teams they belong to (`search-tool` (`type: team`) / `get-tool` (`type: team`)) and the universe they live in (`get-tool` (`type: universe`)).
-- **Defining stories.** The story arcs and events they anchor (`search-tool` (`type: story_arc`), `search-tool` (`type: event`), `get-tool` (`type: event`)).
-- **Notable runs.** The series where they're central (`search-tool` (`type: series`)), plus the creators most associated with them.
+- **First appearance & key issues:** surface the debut and other significant books, labeled with their significance via `get-key-issue-reasons-tool` (1st appearance, origin, death, first cover, and so on).
+- **Affiliations:** teams they belong to (`search-tool` (`type: team`) / `get-tool` (`type: team`)) and the universe they live in (`get-tool` (`type: universe`)).
+- **Defining stories:** the story arcs and events they anchor (`search-tool` (`type: story_arc`), `search-tool` (`type: event`), `get-tool` (`type: event`)).
+- **Notable runs:** the series where they're central (`search-tool` (`type: series`)), plus the creators most associated with them.
 
 ## Present it
 
 Structure it so it scans:
-1. **Who.** One-paragraph identity: publisher, universe, alter ego, debut year.
-2. **Key issues.** Bulleted, each with its significance and issue id, ordered by importance (1st appearance first). Flag which are expensive, cross-referencing `get-market-prices-tool` only if the user cares about value.
-3. **Affiliations.** Teams and universe.
-4. **Defining stories.** Arcs and events, in suggested reading order.
-5. **Where to start.** One concrete entry point: a series plus issue, or a collected edition. Hand off to the `reading-order` skill for anything complex.
+1. **Who:** one paragraph on publisher, universe, alter ego, and debut year.
+2. **Key issues:** bulleted, each with its significance and issue id, ordered by importance (1st appearance first). Flag which are expensive, cross-referencing `get-market-prices-tool` only if the user cares about value.
+3. **Affiliations:** teams and universe.
+4. **Defining stories:** arcs and events, in suggested reading order.
+5. **Where to start:** one series plus issue, or a collected edition. Hand off to the `reading-order` skill for anything complex.
 
 End by offering to save the key issues as a want-list, add them to the user's collection, or build a reading list.
