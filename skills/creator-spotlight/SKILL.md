@@ -1,4 +1,5 @@
 ---
+name: creator-spotlight
 description: Maps a comic creator's body of work using VerseDB, including their series and issues by role (writer, artist, etc.), signature runs, collaborators, and what to read first. Use when the user asks "what has X written", "X's best work", "bibliography for X", "everything by X", or "where do I start with X as a creator".
 ---
 

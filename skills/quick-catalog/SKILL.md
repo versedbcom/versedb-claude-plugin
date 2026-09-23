@@ -1,4 +1,5 @@
 ---
+name: quick-catalog
 description: Bulk-adds comics to the user's VerseDB collection from a pasted list, a series plus issue range, a description of a longbox, or a photo of a cover or barcode. It resolves each book and confirms the matches before writing anything. Use when the user says "add these to my collection", "catalog these", "I just bought…", "log this stack", sends a picture of a comic to add, or pastes a list of issues to record.
 ---
 

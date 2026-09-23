@@ -1,4 +1,5 @@
 ---
+name: reading-order
 description: Build a chronological reading order for a comic character, story arc, event, creator run, or series using the VerseDB MCP. Use when the user asks "where do I start", "what order do I read X in", "reading order for X", or wants a guided path through a run or crossover.
 ---
 

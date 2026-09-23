@@ -1,12 +1,12 @@
-# VerseDB plugin for Claude Code
+# VerseDB Agent Plugin
 
-Search, catalog, and discover comics through the [VerseDB](https://versedb.com) MCP. The plugin bundles the connection along with a few skills and a couple of agents that know how to use the tools.
+Search, catalog, and discover comics through the [VerseDB](https://versedb.com) MCP. It works with both Claude and OpenAI. The plugin bundles the connection along with a few skills and a couple of agents that know how to use the tools.
 
 VerseDB is a comic database covering comics, manga, manhwa, manhua, and bande dessinée. The MCP gives you 20 tools. Two of them do most of the browsing: `search-tool` and `get-tool` take a `type` parameter covering titles, series, issues, creators, characters, publishers, teams, story arcs, universes, events, comic shops, and podcasts. The rest are specialized lookups (trending, upcoming releases, market prices, barcode lookup, key issues, community reviews, series issue lists) and personal tools for your collection, pull list, reading progress, lists, reviews, and profile. Each write tool takes an `operation` parameter saying what to do.
 
 ## What you get
 
-The MCP itself connects at `https://versedb.com/mcp/api`. Installing the plugin wires it up, and Claude Code handles the OAuth flow the first time you use it.
+The MCP itself connects at `https://versedb.com/mcp/api`. Installing the plugin wires it up, and your client handles the OAuth sign-in the first time you use it.
 
 ### Agents
 
@@ -31,7 +31,7 @@ You'll need a VerseDB [Pro subscription](https://versedb.com/pro). The hosted MC
 
 The plugin lives in a marketplace on GitHub (`versedbcom/versedb-agent-plugin`). You add the
 marketplace once, then install VerseDB from it. The steps differ a little depending on where you
-run Claude.
+run it.
 
 ### Claude website (claude.ai) or the Claude desktop app
 
@@ -59,6 +59,12 @@ To test a local checkout instead:
 ```text
 claude --plugin-dir /path/to/versedb-agent-plugin
 ```
+
+### OpenAI
+
+Find **VerseDB** in the OpenAI plugin directory and install it. You'll be asked to sign in to
+your VerseDB account the first time a tool runs. On OpenAI the two agents ship as skills of the
+same name (`comic-concierge` and `comic-research`), since agents aren't supported there.
 
 ## Usage
 

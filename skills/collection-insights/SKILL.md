@@ -1,4 +1,5 @@
 ---
+name: collection-insights
 description: Analyzes the user's VerseDB comic collection - total and per-issue market value, run gaps (missing issues in series they own), reading progress, and which key issues they hold. Use when the user asks "what's my collection worth", "what am I missing", "analyze my collection", "what should I read next from what I own", or "what are my most valuable books".
 ---
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.10
+
+- Update
+
 ## 0.1.9
 
 - Repository renamed to versedb-agent-plugin; display name is now VerseDB: Comic Book Tracker.

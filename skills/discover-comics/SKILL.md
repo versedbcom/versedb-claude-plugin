@@ -1,4 +1,5 @@
 ---
+name: discover-comics
 description: Recommends comics to read or buy from VerseDB, drawing on trending titles, key issues, and well-reviewed books, tuned to a genre, character, creator, or the user's tastes, and can save the picks to a list. Use when the user asks "what should I read", "what's popular", "recommend something like X", "what's hot right now", or "find me good X comics".
 ---
 

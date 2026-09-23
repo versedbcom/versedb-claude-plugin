@@ -1,4 +1,5 @@
 ---
+name: character-dossier
 description: Builds a profile of a comic character using VerseDB, covering first appearance and key issues, teams and affiliations, the story arcs and events they anchor, and where to start reading. Use when the user asks "tell me about X", "who is X", "X's first appearance", "X's key issues", or "where do I start with X".
 ---
 
