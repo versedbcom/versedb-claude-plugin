@@ -2,7 +2,7 @@
 
 Search, catalog, and discover comics through the [VerseDB](https://versedb.com) MCP. The plugin bundles the connection along with a few skills and a couple of agents that know how to use the tools.
 
-VerseDB is a comic database covering comics, manga, manhwa, manhua, and bande dessinée. The MCP gives you 18 tools. Two of them do most of the browsing: `search-tool` and `get-tool` take a `type` parameter covering titles, series, issues, creators, characters, publishers, teams, story arcs, universes, events, comic shops, and podcasts. The rest are specialized lookups (trending, upcoming releases, market prices, barcode lookup, key issues, community reviews, series issue lists) and personal tools for your collection, pull list, reading progress, lists, and reviews. Each write tool takes an `operation` parameter saying what to do.
+VerseDB is a comic database covering comics, manga, manhwa, manhua, and bande dessinée. The MCP gives you 20 tools. Two of them do most of the browsing: `search-tool` and `get-tool` take a `type` parameter covering titles, series, issues, creators, characters, publishers, teams, story arcs, universes, events, comic shops, and podcasts. The rest are specialized lookups (trending, upcoming releases, market prices, barcode lookup, key issues, community reviews, series issue lists) and personal tools for your collection, pull list, reading progress, lists, reviews, and profile. Each write tool takes an `operation` parameter saying what to do.
 
 ## What you get
 
@@ -19,7 +19,7 @@ The MCP itself connects at `https://versedb.com/mcp/api`. Installing the plugin 
 - `collection-insights` looks at collection value, gaps in your runs, reading progress, and the key issues you own.
 - `discover-comics` pulls recommendations from trending titles, key issues, and reviews.
 - `pull-list-planner` handles upcoming releases, catching up, and tidying your pull list.
-- `quick-catalog` bulk-adds comics to your collection from a pasted list or a series plus a range.
+- `quick-catalog` bulk-adds comics to your collection from a pasted list, a series plus a range, or a photo of a cover or barcode.
 - `character-dossier` builds a character profile: first appearance, key issues, affiliations, and where to start.
 - `creator-spotlight` covers a creator's work by role, their signature runs, and what to read first.
 
@@ -63,5 +63,3 @@ claude --plugin-dir /path/to/versedb-claude-plugin
 ## Usage
 
 Just ask for what you want in plain language: "what order do I read Saga in", "what's my collection worth", "what's coming out for my pull list", "recommend something like Immortal Hulk". The concierge and the skills figure out which tools to call.
-</content>
-</invoke>

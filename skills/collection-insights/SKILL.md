@@ -8,11 +8,12 @@ Turn a user's collection into something they can act on: what it's worth, where 
 
 ## Pull the collection
 
-Start with `get-my-collection-tool`. Walk pagination (default 50) before summarizing; partial data produces wrong totals.
+Start with `get-my-collection-tool`. Its `summary` covers the whole collection, so you don't need every page for the totals. Walk every page (25 by default; pass `per_page` up to 100) before listing books, or the per-book sections come out short.
 
 ## Value
 
-- For each issue (or the notable ones), call `get-market-prices-tool`. Prices are **grade-dependent**: match each value to the grade/condition recorded on the collection item, and state that grade. Never quote a bare number.
+- `summary.total_estimated_value` adds up the values the user recorded on their copies, the same figure the site shows as Market Value. `copies_with_estimated_value` says how many copies that covers. Say so plainly: it's their number, not an appraisal.
+- For copies with no recorded value (or the notable ones), call `get-market-prices-tool`. Prices are **grade-dependent**: match each value to the grade/condition recorded on the collection item, and state that grade. Never quote a bare number.
 - Report total estimated value, the top N most valuable books, and any notable movers (the tool exposes recent sales and trends). Flag that values are estimates with sale dates, not guarantees.
 
 ## Gaps
@@ -24,10 +25,10 @@ For series the user collects:
 
 ## Key issues held
 
-Run owned issues against `get-key-issue-reasons-tool` (and `get-tool` (`type: issue`) per book) to highlight first appearances, origins, deaths, and other significance the user may not realize they own.
+Call `get-tool` (`type: issue`) on owned books and read `key_issue_reasons` to highlight first appearances, origins, deaths, and other significance the user may not realize they own.
 
 ## Present it
 
 Lead with the headline (total value, # of series, % read), then sections: Most valuable · Run gaps · Key issues · Suggested next read. Offer to save a "missing issues" list (`list-tool`: `create`, then `add_item`) or add the gaps to their pull list.
 
-The server ships a `collection-analysis` prompt; prefer it when the user wants a broad overview rather than a specific cut.
+The server ships a `collection-analysis-prompt` prompt; prefer it when the user wants a broad overview rather than a specific cut.

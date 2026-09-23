@@ -10,9 +10,9 @@ The VerseDB MCP is Pro-only, every tool including search. If a call returns an a
 
 ## Gather signal
 
-Pull from several sources and balance them; don't lean on one. Start with `get-trending-tool` for what's currently popular. Weight candidates by community rating with `get-community-reviews-tool` (1–5 stars). To surface historically significant books, pair `get-key-issue-reasons-tool` with `search-tool` (`type: issue`). When the user anchors on a creator, character, or publisher ("more like Saga", "anything by Tom King"), go straight to the matching `search-*` tool.
+Pull from several sources and balance them; don't lean on one. Start with `get-trending-tool`: `top_rated`, `most_reviewed`, or `recent_popular` for series that started in the last two years. It ranks on member ratings, not sales. Once you have a shortlist, check each series with `get-community-reviews-tool` (`series_id`) for the most-liked member reviews, and quote them as readers' opinions, not fact. For historically significant books, read `key_issue_reasons` on candidate issues with `get-tool` (`type: issue`). When the user anchors on a creator, character, or publisher ("more like Saga", "anything by Tom King"), go straight to `search-tool` with the matching `type` (`creator`, `character`, `publisher`, `series`).
 
-Walk pagination (default 50) on any list you pull before ranking; a truncated set skews the picks.
+Walk every page of any list you pull before ranking (25 by default; pass `per_page` up to 100); a truncated set skews the picks. `search-tool` doesn't page, so raise its `limit` (up to 50) or narrow the query.
 
 ## Tune to the user
 

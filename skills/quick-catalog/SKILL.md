@@ -6,7 +6,7 @@ description: Bulk-adds comics to the user's VerseDB collection from a pasted lis
 
 Get a stack of comics into the user's collection, matched correctly, asking as few questions as possible. The whole VerseDB MCP is Pro-only. If any call (e.g. `collection-tool` (`operation: add`)) returns an auth/subscription error (`pro_required` / HTTP 402), tell the user it needs Pro and stop.
 
-## 1. Parse the input
+## Parse the input
 
 Input arrives as one of:
 - A **list** of books ("Saga #1–6, Batman 2016 #50, Immortal Hulk #1").
@@ -25,7 +25,7 @@ When the input is an image, read what you can off the comic itself before search
 
 Tell the user what you read from the image, and ask them to fill in anything the photo can't show (grade/condition, or which variant).
 
-## 2. Resolve each book: match before you write
+## Match before you write
 
 For each entry:
 1. `search-tool` (`type: issue`) (or `search-tool` (`type: series`) → `get-series-issues-tool` for a range) to find candidates.
@@ -35,12 +35,15 @@ For each entry:
    - `#0`, `#-1`, decimal (`#1.1`), and annuals are real, separate issues.
 3. **Collect ambiguous and not-found entries into a list. Do not guess.** Resolve everything resolvable first, then present the leftovers for the user to disambiguate in one batch.
 
-## 3. Confirm, then write
+## Confirm, then write
 
 - Show the resolved set as a table (`Series (year) #N — grade/condition`) and the unresolved set separately. Get a go-ahead before writing.
 - `collection-tool` (`operation: add`) per book. Walk the list; **verify after writing** by reading back (`get-my-collection-tool`) that the count increased by the expected amount.
 - Skip duplicates already in the collection rather than double-adding; report them.
+- Walk every page (25 by default; pass `per_page` up to 100) of `get-my-collection-tool` for the dupe check and the read-back, and of `get-series-issues-tool` for a long range. Page one alone misses books.
 
-## 4. Report
+## Report
 
-Summarize: added N, skipped M dupes, K still need the user's input. For the leftovers, give the candidate options so the next pass is one reply. Offer to record grades/conditions you didn't have, or to start a want-list (`list-tool` (`operation: create`)) for anything they were cataloging but don't yet own. When the user named a specific variant for a book they're hunting, carry it onto the list item. `list-tool` (`operation: add_item`) takes an optional `variant_id` (issue items only, and the variant must belong to that issue) that pins the entry to that cover. Omit it when they'd take any printing; the same issue can sit on the list once per variant plus once variant-less.
+Summarize: added N, skipped M dupes, K still need the user's input. For the leftovers, give the candidate options so the next pass is one reply.
+
+Offer to record grades/conditions you didn't have, or to start a want-list (`list-tool` (`operation: create`)) for anything they don't own yet. If they're hunting a specific cover, pass its `variant_id` on `add_item`; leave it off when any printing will do.

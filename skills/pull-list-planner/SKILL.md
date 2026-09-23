@@ -8,13 +8,13 @@ Keep the user current on the ongoing series they follow. The whole VerseDB MCP i
 
 ## Where they stand
 
-- `get-my-pull-list-tool` lists the series they follow.
-- `get-upcoming-releases-tool` shows what's shipping soon. Intersect it with the pull list to build "coming up for you".
+- `get-my-pull-list-tool` lists the series they follow. Walk every page (25 by default; pass `per_page` up to 100), or series go missing.
+- `get-upcoming-releases-tool` with `pull_list_only: true` returns only what's shipping for series on their active pull list. Walk its pages too (50 by default, up to 100); a busy week runs past one.
 - `get-series-progress-tool`, run per followed series, flags where they've fallen behind (issues out but unread).
 
 ## What to surface
 
-1. **What's coming:** upcoming issues for followed series, by date. Group by week, and note key issues (`get-key-issue-reasons-tool`) and finales.
+1. **What's coming:** upcoming issues for followed series, by date. Group by week, and note key issues (`key_issue_reasons` from `get-tool` (`type: issue`)) and finales.
 2. **Catch up:** followed series with shipped-but-unread issues. Offer to mark caught-up issues read (`read-status-tool` (`operation: mark_read`)) once the user confirms they've read them. Never mark read on your own.
 3. **What to add:** suggest new ongoings via `get-trending-tool` and `search-tool` (`type: series`), filtered to series they don't already follow and matched to the creators and genres in their current pulls. Add with `pull-list-tool` (`operation: add`) after confirmation. Prune dead or ended series with `pull-list-tool` (`operation: remove`).
 
