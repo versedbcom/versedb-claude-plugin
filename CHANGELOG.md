@@ -1,10 +1,10 @@
 # Changelog
 
+## 0.1.9
+
+- Repository renamed to versedb-agent-plugin; display name is now VerseDB: Comic Book Tracker.
+
 ## 0.1.8
-
-- Update
-
-## 0.1.7
 
 - The concierge can rate a whole series (stars only) as well as review single issues.
 - Key issues now come from each issue's own `key_issue_reasons`. Several skills were asking `get-key-issue-reasons-tool` for them, which only searches the reason names.
@@ -13,6 +13,10 @@
 - Reading orders no longer write plot notes the data doesn't carry; the note comes from the solicitation or is left off.
 - Pagination guidance matches the server: 25 per page by default, up to 100.
 - README lists all 20 tools, including the profile tool.
+
+## 0.1.7
+
+- Update
 
 ## 0.1.6
 
